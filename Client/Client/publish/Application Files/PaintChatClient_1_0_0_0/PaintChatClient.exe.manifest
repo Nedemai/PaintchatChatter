@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1">
+  <asmv1:assemblyIdentity name="PaintChatClient.exe" version="1.0.0.0" publicKeyToken="4ee0369b721e04be" language="neutral" processorArchitecture="msil" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="PaintChatClient" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="PaintChatClient.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC Manifest Options
+          If you want to change the Windows User Account Control level replace the 
+          requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         If you want to utilize File and Registry Virtualization for backward 
+         compatibility then delete the requestedExecutionLevel node.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PaintChatClient.exe" size="99840">
+      <assemblyIdentity name="PaintChatClient" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>1Vf29RdtIwG87CXglCgzqPlwlSU=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+<publisherIdentity name="CN=Nedemai-PC\Nedemai" issuerKeyHash="b97620ae4feb71098b41b3f2dac673412fbc6514" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>ruAHFJRt1b8PRdExR6/QqwfaIMg=</DigestValue></Reference></SignedInfo><SignatureValue>cj0Msc3Spabc4utqDBLlF1CorqPI6XIvIYiVdaMlUUb6t2mxlrO1Em5eUEXBBB7VHs6mEylgwXWlQawAxSEb5JHaDcOxXtGxsEwdeO3AIdQfDt+zA8FiAnH6SQTJ5VH6pFxBJADyzL1+u9MYSuJev90rT9JwibGYK3DjFCYtPbs=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>kC0sKNBHTJm+NlS2xHuPYqw61MndqCVgEEkCTPo5uAlgjWKy5fSgf1ZIwAfj+/c5n5FI+r52I6eDniD5nirACAP4ON9FOhe1pbuFupfTXy3BEO3HuD9BuU2h/PYjjzYyLwav5K93QdsjfCfO+5vSEFsk2U/uF9oHEWBLlwXc8bk=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="c820da07abd0af4731d1450fbfd56d941407e0ae" Description="" Url=""><as:assemblyIdentity name="PaintChatClient.exe" version="1.0.0.0" publicKeyToken="4ee0369b721e04be" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=Nedemai-PC\Nedemai</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>Ag28uGZvS5hE3ERpo8vVTRKMkSc=</DigestValue></Reference></SignedInfo><SignatureValue>fAZXd4kwyHwlhck/F7QAokbqAeATq6zM5UgKZaCiNcq35ZX4qZfsu4dhk3btplzYrY6RQAohsDUkGBrKLAtKXk/6EbbFpcWCBYtFM4MUXU5anlo90Ff3nxXILkjdOieb+nt8OcaHLRCPxDCrvvHHGeqN7Fwl+Ti3BbGgNUKUjjk=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>kC0sKNBHTJm+NlS2xHuPYqw61MndqCVgEEkCTPo5uAlgjWKy5fSgf1ZIwAfj+/c5n5FI+r52I6eDniD5nirACAP4ON9FOhe1pbuFupfTXy3BEO3HuD9BuU2h/PYjjzYyLwav5K93QdsjfCfO+5vSEFsk2U/uF9oHEWBLlwXc8bk=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB4TCCAUqgAwIBAgIQZKne7XmmLatIPJgC2+EW8DANBgkqhkiG9w0BAQUFADAvMS0wKwYDVQQDHiQATgBlAGQAZQBtAGEAaQAtAFAAQwBcAE4AZQBkAGUAbQBhAGkwHhcNMTMwMTIyMDgzMTM1WhcNMTQwMTIyMTQzMTM1WjAvMS0wKwYDVQQDHiQATgBlAGQAZQBtAGEAaQAtAFAAQwBcAE4AZQBkAGUAbQBhAGkwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAJAtLCjQR0yZvjZUtsR7j2KsOtTJ3aglYBBJAkz6ObgJYI1isuX0oH9WSMAH4/v3OZ+RSPq+diOng54g+Z4qwAgD+DjfRToXtaW7hbqX018twRDtx7g/QblNofz2I482Mi8Gr+Svd0HbI3wnzvub0hBbJNlP7hfaBxFgS5cF3PG5AgMBAAEwDQYJKoZIhvcNAQEFBQADgYEAHtd5bqk703ZFT2nJEi1BCREZq5foyZPdV95K2ZNe83u/MXEC4wLxEtMylrs4736awrsyJOoCESafNdEBo/dVDNkse4xjdaT/Q1x5AeJrLjmla4VNg7rjSatHL2aZoYMcYO9VJ7thbbgCI6OA2rQYnlDLL/RnFjLkEyl+DmzQB+Q=</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

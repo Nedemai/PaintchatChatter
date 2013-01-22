@@ -1,0 +1,57 @@
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+#
+# Initial commit
+#
+# Changes to be committed:
+#   (use "git rm --cached <file>..." to unstage)
+#
+#	new file:   Client/Client/Form1.Designer.cs
+#	new file:   Client/Client/Form1.cs
+#	new file:   Client/Client/Form1.resx
+#	new file:   Client/Client/Program.cs
+#	new file:   Client/Client/Properties/AssemblyInfo.cs
+#	new file:   Client/Client/Properties/Resources.Designer.cs
+#	new file:   Client/Client/Properties/Resources.resx
+#	new file:   Client/Client/Properties/Settings.Designer.cs
+#	new file:   Client/Client/Properties/Settings.settings
+#	new file:   Client/Client/Resources/12247848622041168088roystonlodge_Simple_Glossy_Circle_Button_Red.svg.med.png
+#	new file:   Client/Client/WindowsFormsApplication1.csproj
+#	new file:   Client/Client/WindowsFormsApplication1.csproj.user
+#	new file:   Client/Client/WindowsFormsApplication1_TemporaryKey.pfx
+#	new file:   Client/Client/bin/Debug/Config.txt
+#	new file:   Client/Client/bin/Debug/PaintChatClient.application
+#	new file:   Client/Client/bin/Debug/PaintChatClient.exe
+#	new file:   Client/Client/bin/Debug/PaintChatClient.exe.manifest
+#	new file:   Client/Client/bin/Debug/PaintChatClient.pdb
+#	new file:   Client/Client/bin/Debug/PaintChatClient.vshost.application
+#	new file:   Client/Client/bin/Debug/PaintChatClient.vshost.exe
+#	new file:   Client/Client/bin/Debug/PaintChatClient.vshost.exe.manifest
+#	new file:   Client/Client/bin/Debug/WindowsFormsApplication1.vshost.exe.manifest
+#	new file:   Client/Client/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+#	new file:   Client/Client/obj/Debug/GenerateResource.read.1.tlog
+#	new file:   Client/Client/obj/Debug/GenerateResource.write.1.tlog
+#	new file:   Client/Client/obj/Debug/PaintChatClient.Properties.Resources.resources
+#	new file:   Client/Client/obj/Debug/PaintChatClient.application
+#	new file:   Client/Client/obj/Debug/PaintChatClient.exe
+#	new file:   Client/Client/obj/Debug/PaintChatClient.exe.manifest
+#	new file:   Client/Client/obj/Debug/PaintChatClient.pdb
+#	new file:   Client/Client/obj/Debug/TempPE/Properties.Resources.Designer.cs.dll
+#	new file:   Client/Client/obj/Debug/WindowsFormsApplication1.Form1.resources
+#	new file:   Client/Client/obj/Debug/WindowsFormsApplication1.csproj.FileListAbsolute.txt
+#	new file:   Client/Client/publish/Application Files/PaintChatClient_1_0_0_0/PaintChatClient.application
+#	new file:   Client/Client/publish/Application Files/PaintChatClient_1_0_0_0/PaintChatClient.exe.deploy
+#	new file:   Client/Client/publish/Application Files/PaintChatClient_1_0_0_0/PaintChatClient.exe.manifest
+#	new file:   Client/Client/publish/PaintChatClient.application
+#	new file:   Client/Client/publish/setup.exe
+#	new file:   Client/UpgradeLog.XML
+#	new file:   Client/WindowsFormsApplication1.sln
+#	new file:   Client/WindowsFormsApplication1.suo
+#	new file:   Client/_UpgradeReport_Files/UpgradeReport.css
+#	new file:   Client/_UpgradeReport_Files/UpgradeReport.xslt
+#	new file:   Client/_UpgradeReport_Files/UpgradeReport_Minus.gif
+#	new file:   Client/_UpgradeReport_Files/UpgradeReport_Plus.gif
+#
+
