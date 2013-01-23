@@ -2,15 +2,15 @@
 {
     partial class Form1
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
+        // <summary>
+        // Required designer variable.
+        // </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        // <summary>
+        // Clean up any resources being used.
+        // </summary>
+        // <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -22,10 +22,10 @@
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
+        // <summary>
+        // Required method for Designer support - do not modify
+        // the contents of this method with the code editor.
+        // </summary>
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
@@ -44,6 +44,7 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
+            this.hexCheckBox = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // button1
@@ -142,6 +143,8 @@
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(118, 355);
             this.listBox1.TabIndex = 10;
+            this.listBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.listBox1.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.listBox1_DrawItem);
             // 
             // label2
             // 
@@ -200,6 +203,15 @@
             this.textBox5.Size = new System.Drawing.Size(88, 22);
             this.textBox5.TabIndex = 13;
             this.textBox5.Text = "127.0.0.1";
+            //
+            // hexCheckBox
+            //
+            this.hexCheckBox.Parent = this;
+            this.hexCheckBox.Size = new System.Drawing.Size(128,32);
+            this.hexCheckBox.Location = new System.Drawing.Point(32, 0);
+            this.hexCheckBox.Text = "Send Hex";
+            this.hexCheckBox.Checked = false;
+            this.hexCheckBox.CheckedChanged += this.hexCheckBox_CheckedChangedHandler;
             // 
             // Form1
             // 
@@ -253,6 +265,7 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.CheckBox hexCheckBox;
     }
 }
 
