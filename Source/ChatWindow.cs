@@ -321,7 +321,6 @@ namespace PaintchatChatter
                 byte[] buffer = {0x00};
                 clientStream.Write(buffer, 0, buffer.Length);
                 clientStream.Flush();
-                Thread.Sleep(200);
 
                 if (sendHex) {
 
@@ -331,7 +330,6 @@ namespace PaintchatChatter
                     buffer = new byte[] { (byte)data.Length };
                     clientStream.Write(buffer, 0, buffer.Length);
                     clientStream.Flush();
-                    Thread.Sleep(200);
 
                     clientStream.Write(data, 0, data.Length);
                     clientStream.Flush();
@@ -341,7 +339,6 @@ namespace PaintchatChatter
                     buffer = new byte[] { (byte)(textBox1.TextLength + 6)};
                     clientStream.Write(buffer, 0, buffer.Length);
                     clientStream.Flush();
-                    Thread.Sleep(200);
 
                     byte[] data = new byte[data6.Length + data5.Length];
                     System.Buffer.BlockCopy(data6, 0, data, 0, data6.Length);
