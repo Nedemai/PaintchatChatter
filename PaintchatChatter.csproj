@@ -74,7 +74,6 @@
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
     <Reference Include="System.Data" />
-    <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
@@ -101,14 +100,14 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Source\Program.cs" />
-    <Compile Include="Source\Form1.cs">
+    <Compile Include="Source\ChatWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Source\ChatWindow.Designer.cs">
+      <DependentUpon>ChatWindow.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Source\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Source\ChatWindow.resx">
+      <DependentUpon>ChatWindow.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
