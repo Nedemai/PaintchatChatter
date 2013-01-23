@@ -9,16 +9,16 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-//using WindowsFormsApplication1.Properties;
+//using PaintchatChatter.Properties;
 using System.Collections;
 using System.Text.RegularExpressions;
 using System.Xml.Serialization;
 
-namespace WindowsFormsApplication1
+namespace PaintchatChatter
 {
     
 
-    public partial class Form1 : Form
+    public partial class ChatWindow : Form
     {
 
         
@@ -37,9 +37,9 @@ namespace WindowsFormsApplication1
         List<string> UserName = new List<string>();
         List<string> UserID = new List<string>();
 
-        System.Text.ASCIIEncoding encoding = new System.Text.ASCIIEncoding();
-        byte[] buffer;
-        ArrayList ByteArray = new ArrayList();
+        //System.Text.ASCIIEncoding encoding = new System.Text.ASCIIEncoding();
+        //byte[] buffer;
+        //ArrayList ByteArray = new ArrayList();
 
 
         delegate void SetTextCallback(string text);
@@ -113,7 +113,7 @@ namespace WindowsFormsApplication1
             SetTextCallback d = new SetTextCallback(Settext);
             SetListAddCallback listAdd = new SetListAddCallback(AddList);
             SetListRemoveCallback listRemove = new SetListRemoveCallback(RemoveList);
-            buffer = encoding.GetBytes("");
+            //buffer = encoding.GetBytes("");
 
             byte[] message = new byte[65535];
             byte[] message2 = new byte[2];
@@ -162,7 +162,7 @@ namespace WindowsFormsApplication1
                         bytesRead = clientStream.Read(message, 0, 1);
                         bytesRead = clientStream.Read(message2, 0, 1);
                         length = ((int)message[0]<<8) | (int)message2[0];//LENGTH OF DATA
-                        string text2 = encoding.GetString(message, 0, bytesRead);
+                        //string text2 = encoding.GetString(message, 0, bytesRead);
                         Thread.Sleep(100);
                         if (length == 0)
                         {//PING?
@@ -174,7 +174,7 @@ namespace WindowsFormsApplication1
                             bytesRead = clientStream.Read(message2, 0, 1);
                             length2 = ((int)message[0] << 8) | (int)message2[0];//LENGTH OF MESSAGE
                             bytesRead = clientStream.Read(message, 0, length-2);//full message
-                            text2 = encoding.GetString(message, 0, bytesRead);
+                            //text2 = encoding.GetString(message, 0, bytesRead);
                             offset = 4;
                             while (offset <= bytesRead)
                             {
@@ -256,7 +256,7 @@ namespace WindowsFormsApplication1
             //System.Console.Write("---the client has disconnected from the server---");
         }
 
-        public Form1()
+        public ChatWindow()
         { 
             InitializeComponent();
            // textBox1.Text = " \r\n";  
@@ -266,7 +266,7 @@ namespace WindowsFormsApplication1
         {
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void ChatWindow_Load(object sender, EventArgs e)
         {
 
           //  richTextBox1.Text.Insert(0, "{\\colortbl ;\\red128\\green0\\blue0;\\red0\\green128\\blue0;\\green0\\blue255;}");
@@ -316,12 +316,11 @@ namespace WindowsFormsApplication1
             {
                 byte[] data5 = Encoding.ASCII.GetBytes(textBox1.Text);
                 byte[] data6 = { 0x00, (byte)((textBox1.TextLength + 6)-2), 0x00, 0x00, 0x00, 0x00 };//message   
-                byte[] data4 = { 0x00, (byte)((textBox1.TextLength)/2+6) };//length of message
+                //byte[] data4 = { 0x00, (byte)((textBox1.TextLength)/2+6) };//length of message
 
                 byte[] buffer = {0x00};
                 clientStream.Write(buffer, 0, buffer.Length);
                 clientStream.Flush();
-                Thread.Sleep(200);
 
                 if (sendHex) {
 
@@ -331,7 +330,6 @@ namespace WindowsFormsApplication1
                     buffer = new byte[] { (byte)data.Length };
                     clientStream.Write(buffer, 0, buffer.Length);
                     clientStream.Flush();
-                    Thread.Sleep(200);
 
                     clientStream.Write(data, 0, data.Length);
                     clientStream.Flush();
@@ -341,7 +339,6 @@ namespace WindowsFormsApplication1
                     buffer = new byte[] { (byte)(textBox1.TextLength + 6)};
                     clientStream.Write(buffer, 0, buffer.Length);
                     clientStream.Flush();
-                    Thread.Sleep(200);
 
                     byte[] data = new byte[data6.Length + data5.Length];
                     System.Buffer.BlockCopy(data6, 0, data, 0, data6.Length);
@@ -368,7 +365,7 @@ namespace WindowsFormsApplication1
                 {   
                      client = new TcpClient();
                      serverEndPoint = new IPEndPoint(IPAddress.Parse(textBox5.Text), Convert.ToInt32(textBox4.Text));
-                    byte[] message = new byte[4096];
+                    //byte[] message = new byte[4096];
               
                     client.Connect(serverEndPoint);
                     clientStream = client.GetStream();
@@ -447,7 +444,7 @@ namespace WindowsFormsApplication1
             }
         }
 
-        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        private void ChatWindow_FormClosed(object sender, FormClosedEventArgs e)
         {
             
         }
@@ -515,7 +512,7 @@ namespace WindowsFormsApplication1
 
 
 
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        private void ChatWindow_FormClosing(object sender, FormClosingEventArgs e)
         {
   
         }
