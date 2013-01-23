@@ -30,6 +30,8 @@ namespace WindowsFormsApplication1
 
         public bool closeRequested = false;
 
+        private bool sendHex = false;
+
         bool connected = false;
         int numThreads = 0;
         List<string> UserName = new List<string>();
@@ -303,22 +305,53 @@ namespace WindowsFormsApplication1
         {         
         }
 
+        private void hexCheckBox_CheckedChangedHandler(object sender, EventArgs e)
+        {
+            this.sendHex = ((System.Windows.Forms.CheckBox)sender).Checked;
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             try
             {
-
                 byte[] data5 = Encoding.ASCII.GetBytes(textBox1.Text);
                 byte[] data6 = { 0x00, (byte)((textBox1.TextLength + 6)-2), 0x00, 0x00, 0x00, 0x00 };//message   
-                byte[] data4 = { 0x00, (byte)(textBox1.TextLength+6) };//length of message
-                clientStream.Write(data4, 0, data4.Length);
+                byte[] data4 = { 0x00, (byte)((textBox1.TextLength)/2+6) };//length of message
+
+                byte[] buffer = {0x00};
+                clientStream.Write(buffer, 0, buffer.Length);
                 clientStream.Flush();
-                byte[] rv = new byte[data6.Length + data5.Length];
-                System.Buffer.BlockCopy(data6, 0, rv, 0, data6.Length);
-                System.Buffer.BlockCopy(data5, 0, rv, data6.Length, data5.Length);
-                clientStream.Write(rv, 0, rv.Length);
-                clientStream.Flush();
-                richTextBox1.Text += textBox2.Text + ">" + textBox1.Text + "\n";
+                Thread.Sleep(200);
+
+                if (sendHex) {
+
+                    string hexString = Regex.Replace(textBox1.Text, @"[^0-9A-Fa-f]", "");
+                    byte[] data = StringToByteArray(hexString);
+
+                    buffer = new byte[] { (byte)data.Length };
+                    clientStream.Write(buffer, 0, buffer.Length);
+                    clientStream.Flush();
+                    Thread.Sleep(200);
+
+                    clientStream.Write(data, 0, data.Length);
+                    clientStream.Flush();
+
+                    richTextBox1.Text += "#HEX# " + hexString + "\n";
+                } else {
+                    buffer = new byte[] { (byte)(textBox1.TextLength + 6)};
+                    clientStream.Write(buffer, 0, buffer.Length);
+                    clientStream.Flush();
+                    Thread.Sleep(200);
+
+                    byte[] data = new byte[data6.Length + data5.Length];
+                    System.Buffer.BlockCopy(data6, 0, data, 0, data6.Length);
+                    System.Buffer.BlockCopy(data5, 0, data, data6.Length, data5.Length);
+                    clientStream.Write(data, 0, data.Length);
+                    clientStream.Flush();
+                    richTextBox1.Text += textBox2.Text + "> " + textBox1.Text + "\n";
+
+                }
+
                 richTextBox1.SelectionStart = richTextBox1.Text.Length;
                 richTextBox1.ScrollToCaret();
                 textBox1.Text = "";
@@ -342,7 +375,7 @@ namespace WindowsFormsApplication1
 
                     string pass = textBox3.Text;
                     string user_name = textBox2.Text;
-                    listBox1.Items.Add(textBox2.Text);
+                    listBox1.Items.Add(user_name);
                     byte[] data = Encoding.ASCII.GetBytes("name=" + user_name + "\npassword=" + pass + "\nprotocol=paintchat.text");
                    
                     byte[] data2 = { 0x62, 0x00, (byte)data.Length };
@@ -510,6 +543,24 @@ namespace WindowsFormsApplication1
 
         }
 
-        
+        public static byte[] StringToByteArray(string hex) {
+            return Enumerable.Range(0, hex.Length)
+                .Where(x => x % 2 == 0)
+                .Select(x => Convert.ToByte(hex.Substring(x, 2), 16))
+                .ToArray();
+        }
+
+        private void listBox1_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            string str = listBox1.Items[e.Index] as string; // Get the current item and cast it to MyListBoxItem
+                e.Graphics.DrawString( // Draw the appropriate text in the ListBox
+                        str, // The message linked to the item
+                        listBox1.Font, // Take the font from the listbox
+                        new SolidBrush(Color.Black), // Set the color 
+                        e.Bounds
+                        );
+        }
+
     }   
+
 }

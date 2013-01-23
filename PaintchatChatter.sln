@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual C# Express 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApplication1", "Client\WindowsFormsApplication1.csproj", "{64C4F316-7D94-4757-A464-6FD0D5F87D16}"
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaintchatChatter", "PaintchatChatter.csproj", "{64C4F316-7D94-4757-A464-6FD0D5F87D16}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -14,7 +14,7 @@ Global
 		{64C4F316-7D94-4757-A464-6FD0D5F87D16}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{64C4F316-7D94-4757-A464-6FD0D5F87D16}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = PaintchatChatter.csproj
 	EndGlobalSection
 EndGlobal
