@@ -375,7 +375,7 @@ namespace WindowsFormsApplication1
 
                     string pass = textBox3.Text;
                     string user_name = textBox2.Text;
-                    listBox1.Items.Add(textBox2.Text);
+                    listBox1.Items.Add(user_name);
                     byte[] data = Encoding.ASCII.GetBytes("name=" + user_name + "\npassword=" + pass + "\nprotocol=paintchat.text");
                    
                     byte[] data2 = { 0x62, 0x00, (byte)data.Length };
@@ -550,6 +550,17 @@ namespace WindowsFormsApplication1
                 .ToArray();
         }
 
-        
+        private void listBox1_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            string str = listBox1.Items[e.Index] as string; // Get the current item and cast it to MyListBoxItem
+                e.Graphics.DrawString( // Draw the appropriate text in the ListBox
+                        str, // The message linked to the item
+                        listBox1.Font, // Take the font from the listbox
+                        new SolidBrush(Color.Black), // Set the color 
+                        e.Bounds
+                        );
+        }
+
     }   
+
 }
