@@ -318,24 +318,20 @@ namespace PaintchatChatter
                 byte[] data6 = { 0x00, (byte)((textBox1.TextLength + 6)-2), 0x00, 0x00, 0x00, 0x00 };//message   
                 //byte[] data4 = { 0x00, (byte)((textBox1.TextLength)/2+6) };//length of message
 
-                byte[] buffer = {0x00};
-                clientStream.Write(buffer, 0, buffer.Length);
-                clientStream.Flush();
-
                 if (sendHex) {
 
                     string hexString = Regex.Replace(textBox1.Text, @"[^0-9A-Fa-f]", "");
                     byte[] data = StringToByteArray(hexString);
-
-                    buffer = new byte[] { (byte)data.Length };
-                    clientStream.Write(buffer, 0, buffer.Length);
-                    clientStream.Flush();
 
                     clientStream.Write(data, 0, data.Length);
                     clientStream.Flush();
 
                     richTextBox1.Text += "#HEX# " + hexString + "\n";
                 } else {
+                    byte[] buffer = {0x00};
+                    clientStream.Write(buffer, 0, buffer.Length);
+                    clientStream.Flush();
+
                     buffer = new byte[] { (byte)(textBox1.TextLength + 6)};
                     clientStream.Write(buffer, 0, buffer.Length);
                     clientStream.Flush();
