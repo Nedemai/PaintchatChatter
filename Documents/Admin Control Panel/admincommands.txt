@@ -1,0 +1,10 @@
+Request information: get:infomation;
+Allow All Layers: layer:all;
+Allow a lower layer: layer:1;
+Allow fill: fill:true;
+Allow All Clean: clean:true;
+Allow Layer Edit: layer_edit:true;
+Permit Draw on Canvas: canvas:true;
+Deny Draw On Canvas: canvas:false;
+permit All Work: layer:all;layer_edit:true;canvas:true;fill:true;clean:true;talk:true;
+Kick User: kill:true;
